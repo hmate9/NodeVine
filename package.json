@@ -1,6 +1,6 @@
 {
-  "name": "node-vine",
-  "version": "1.0.0",
+  "name": "nodevine",
+  "version": "1.0.1",
   "description": "Unofficial Vine API for Node",
   "main": "vine.js",
   "scripts": {

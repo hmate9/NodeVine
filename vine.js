@@ -21,11 +21,11 @@ keys.map(function(value, index, arr) {
     }
     var url = createUrl(obj.endpoint, obj.url_params, params);
     var req = {
-  		uri: settings.api_url + url,
-  		method: obj.request_type,
-  		headers: this.headers,
+      uri: settings.api_url + url,
+      method: obj.request_type,
+      headers: this.headers,
       body: querystring.stringify(params)
-  	};
+    };
     return request(req, handle_response(callback));
   }
 });
@@ -43,20 +43,20 @@ VineUser.prototype.authenticate=function(callback) {
 function handle_response(callback) {
   return function(err, res, body) {
     if (err) return callback(err);
-		if (res.statusCode != 200) {
-			var message = "HTTP Error Code " + res.statusCode + " was returned.";
+    if (res.statusCode != 200) {
+      var message = "HTTP Error Code " + res.statusCode + " was returned.";
       return giveError(message, callback);
-		}
-		if (body) {
-			try {
-				body = JSONbig.parse(body);
-			} catch (e) {
-				message = "Response from Vine API is malformed.";
-			}
-		} else {
-			message = "No response from Vine API was received.";
-		}
-		return callback(null, body.data);
+    }
+    if (body) {
+      try {
+        body = JSONbig.parse(body);
+      } catch (e) {
+        message = "Response from Vine API is malformed.";
+      }
+    } else {
+      message = "No response from Vine API was received.";
+    }
+    return callback(null, body.data);
   }
 }
 
