@@ -1,5 +1,5 @@
 # NodeVine
-Unofficial Vine API for Node.js
+Complete unofficial Vine API for Node.js
 
 # Installation
 
