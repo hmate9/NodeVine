@@ -51,15 +51,17 @@ user.get_me({}, function(err, res) {
 ### Getting someone's followers
 
 ```js
-user.get_followers({user_id:1255502149111492608}, function(err, res) {
+user.get_followers({user_id:'1255502149111492608'}, function(err, res) {
   // res is the list of followers
 });
 ```
 
+Note, we are passing the user id in as a string and not as an integer because it is too big.
+
 ### Follow someone
 
 ```js
-user.follow({user_id:1255502149111492608}, function(err, res) {
+user.follow({user_id:'1255502149111492608'}, function(err, res) {
   // we are now following the given vine user
 });
 ```
