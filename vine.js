@@ -21,7 +21,7 @@ keys.map(function(value, index, arr) {
     }
     var url = createUrl(obj.endpoint, obj.url_params, params);
     var req = {
-      uri: settings.api_url + url,
+      uri: settings.api_url + url + '?' + querystring.stringify(params),
       method: obj.request_type,
       headers: this.headers,
       body: querystring.stringify(params)
