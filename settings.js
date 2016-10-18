@@ -138,6 +138,14 @@ module.exports={
       "optional_params": [],
       "model": "UserCollection"
     },
+    "get_likes": {
+      "endpoint": "posts/%s/likes",
+      "request_type": "get",
+      "url_params": ["post_id"],
+      "required_params": [],
+      "optional_params": ["page", "anchor", "size"],
+      "model": "Like"
+    },
     "like": {
       "endpoint": "posts/%s/likes",
       "request_type": "post",
